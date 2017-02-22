@@ -6,7 +6,7 @@ import reducer from './src/reducers';
 import Hello from './src/components/Hello';
 //import Heroes from './src/components/Heroes';
 import Layout from './src/components/shared/_Layout';
-import Heroes from './src/pages/HeroContainer';
+import Hero from './src/pages/HeroContainer';
 import {Provider} from 'react-redux';
 import { Router, Route, browserHistory, Link , IndexRoute} from 'react-router';
 
@@ -29,7 +29,7 @@ const main = (
         <Route path="/" component={Layout}>
           {/*<IndexRoute component={AppContainer} />*/}
           <Route path="about" component={Hello}/>
-          <Route path="heroes" component={Heroes}/>
+          <Route path="heroes" component={Hero}/>
         </Route>
       </Router>
     </Provider>

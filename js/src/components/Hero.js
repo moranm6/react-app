@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-export default class Heroes extends React.Component {
+export default class Hero extends React.Component {
   render() {
     // let i = Math.PI;
     return <div>

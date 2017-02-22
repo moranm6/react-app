@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 import Navigation from '../components/Navigation';
 // import Hello from '../components/Hello';
-import Heroes from '../components/Heroes'
+import Hero from '../components/Hero'
 //import HeroList from '../pages/HeroContainer'
 import {Link} from 'react-router'
 
@@ -37,7 +37,7 @@ class HeroContainer extends React.Component {
         <p className="lead">The heroes we registered, not the ones we deserved.</p>
         <ul>{listofNames}</ul>
         {this.props.children}
-        <Heroes heroes={this.props.heroes}/>;
+        <Hero heroes={this.props.heroes}/>;
         {/*<Hello name="Michael"></Hello>        */}
         {/*<Link to="/hello1">Hello 1</Link><br/>*/}
       </div>
