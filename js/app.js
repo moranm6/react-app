@@ -4,12 +4,14 @@ import { createStore} from 'redux';
 import AppContainer from './src/containers/AppContainer';
 import reducer from './src/reducers';
 import Hello from './src/components/Hello';
+import Heroes from './src/components/Heroes';
 import {Provider} from 'react-redux';
 import { Router, Route, browserHistory, Link , IndexRoute} from 'react-router';
+import Navigation from './src/components/Navigation';
 
 const store = createStore(reducer);
 
-ReactDOM.render(
+/*ReactDOM.render(
   <Provider store={store}>
       <Router history={browserHistory} >
           <Route path="/" component={AppContainer}>
@@ -18,7 +20,22 @@ ReactDOM.render(
       </Router>
   </Provider>,
   document.getElementById('main')
+);*/
+
+const main = (
+    <Provider store={store}>
+      <Router history={browserHistory} >
+        <Route path="/" component={AppContainer}>
+          {/*<IndexRoute component={AppContainer} />*/}
+          <Route path="hello1" component={Hello} name="Michael"/>
+          <Route path="heroes" component={Heroes}/>
+        </Route>
+      </Router>
+    </Provider>
 );
+
+ReactDOM.render(main, document.getElementById('main'));
+
 
 /*ReactDOM.render(
   <Provider store={store}>
