@@ -6,11 +6,11 @@ const initialState = {
   }
 }
 
-export default (state = {names:[]}, action) => {
+export default (state = initialState, action) => {
   console.log(action);
   switch (action.type) {
     case 'INIT':
-      return {names: action.names};
+      return {heroes: action.heroes};
     case 'SOMETHING':
       return {some: "thing"};
     default:

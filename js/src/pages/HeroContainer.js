@@ -16,20 +16,20 @@ class HeroContainer extends React.Component {
 
   init(list) {
     let {dispatch} = this.props;
-    dispatch({ type: 'INIT', names: list });
+    dispatch({ type: 'INIT', heroes: list });
   }
 
   componentDidMount() {
     const jq = require('jquery');    
-    if (this.props.names.length===0) {
-      jq.getJSON('http://scottpreston.github.io/html/data.json', (data) => this.init(data.list));
+    if (this.props.heroes.length===0) {
+      jq.getJSON('https://ce3rt0e0yl.execute-api.us-east-1.amazonaws.com/prod/abbHeros', (data) => this.init(data));
     }
   }
 
   render() {
-    const listofNames = this.props.names.map((user,idx) => 
-      <li key={idx}>{user.name} -- {user.email} <a onClick={this.deleteUser} className={idx}>remove</a> , 
-      <Link to={`/hello/${user.name}`}> Hello </Link></li>
+    const listofNames = this.props.heroes.map((hero,idx) => 
+      <li key={idx}>{hero.heroName} -- {hero.powers} <a onClick={this.deleteUser} className={idx}>remove</a> , 
+      <Link to={`/hello/${hero.name}`}> Hello </Link></li>
     );    
     return (
       <div>
@@ -37,7 +37,7 @@ class HeroContainer extends React.Component {
         <p className="lead">The heroes we registered, not the ones we deserved.</p>
         <ul>{listofNames}</ul>
         {this.props.children}
-        <Heroes heroes={this.props.names}/>;
+        <Heroes heroes={this.props.heroes}/>;
         {/*<Hello name="Michael"></Hello>        */}
         {/*<Link to="/hello1">Hello 1</Link><br/>*/}
       </div>
@@ -45,4 +45,4 @@ class HeroContainer extends React.Component {
   }
 }
 
-export default connect(state => ({ names: state.names }))(HeroContainer);
+export default connect(state => ({ heroes: state.heroes }))(HeroContainer);
