@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 import Navigation from '../components/Navigation';
 // import Hello from '../components/Hello';
+import Heroes from '../components/Heroes'
  import {Link} from 'react-router'
 
 class AppContainer extends React.Component {
@@ -34,9 +35,9 @@ class AppContainer extends React.Component {
         <Navigation></Navigation>
         <h1>Super Hero Registration</h1>
         <p className="lead">The heroes we registered, not the ones we deserved.</p>
-        {this.props.children}
         <ul>{listofNames}</ul>
-        {/*<div>Test</div>*/}
+        {this.props.children}
+        <Heroes heroes={this.props.names}/>;
         {/*<Hello name="Michael"></Hello>        */}
         {/*<Link to="/hello1">Hello 1</Link><br/>*/}
       </div>
