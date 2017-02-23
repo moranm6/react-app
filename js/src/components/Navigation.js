@@ -8,7 +8,6 @@ export default class Navigation extends React.Component {
         super(props);
     }
     
-
   render() {
     return (
         <nav className="navbar navbar-inverse navbar-fixed-top">
