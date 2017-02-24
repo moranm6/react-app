@@ -28,10 +28,6 @@ class HeroContainer extends React.Component {
 
   render() {
     /*const listofNames = this.props.heroes.map((hero,idx) => 
-      <li key={idx}>{hero.heroName} -- {hero.powers} <a onClick={this.deleteUser} className={idx}>remove</a> , 
-      <Link to={`/hello/${hero.name}`}> Hello </Link></li>*/
-
-    const listofNames = this.props.heroes.map((hero,idx) => 
         <div>
           <tr>
             <td key={idx}>{hero.heroName}</td>
@@ -40,9 +36,9 @@ class HeroContainer extends React.Component {
             <td key={idx}>{hero.powers}</td>
           </tr>
         </div>
-    );    
-    return (
-      <div>
+    );    */
+    return (<Hero heroes={this.props.heroes} />);
+      /*<div>
         <h1>Super Hero Registration</h1>
         <p className="lead">The heroes we registered, not the ones we deserved.</p>
         <table>
@@ -54,10 +50,10 @@ class HeroContainer extends React.Component {
         </table>        
         {this.props.children}
         <Hero heroes={this.props.heroes}/>;
-        {/*<Hello name="Michael"></Hello>        */}
-        {/*<Link to="/hello1">Hello 1</Link><br/>*/}
+        <Hello name="Michael"></Hello>       
+        <Link to="/hello1">Hello 1</Link><br/>
       </div>
-    );
+    );*/
   }
 }
 

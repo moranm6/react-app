@@ -7,6 +7,7 @@ import Hello from './src/components/Hello';
 //import Heroes from './src/components/Heroes';
 import Layout from './src/components/shared/_Layout';
 import Hero from './src/pages/HeroContainer';
+import HeroEditor from './src/pages/EditContainer';
 import {Provider} from 'react-redux';
 import { Router, Route, browserHistory, Link , IndexRoute} from 'react-router';
 
@@ -30,6 +31,7 @@ const main = (
           {/*<IndexRoute component={AppContainer} />*/}
           <Route path="about" component={Hello}/>
           <Route path="heroes" component={Hero}/>
+          <Route path="newHero" component={HeroEditor} />
         </Route>
       </Router>
     </Provider>

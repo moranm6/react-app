@@ -17,8 +17,9 @@ export default class Layout extends React.Component {
               <Link to="/" className="navbar-brand" activeClassName="active"></Link>
               {/*<img src="/assets/SHIELD-Logo.png" className="brand-logo" />*/}
               <ul className="nav navbar-nav">
-                <NavLink to="/about" activeClassName="active">About</NavLink>
+                <NavLink to="/about" activeClassName="active">User</NavLink>
                 <NavLink to="/heroes" activeClassName="active">Heroes</NavLink>
+                <NavLink to="newHero">New Hero</NavLink>
               </ul>
             </div>
           </nav>
