@@ -41,7 +41,7 @@
   },
   "homepage": "https://github.com/scottpreston/react-app#readme",
   "scripts": {
-    "start": "http-server -o",
+    "start": "http-server -o --cors",
     "prestart" : "npm run pack",
     "pack": "webpack", 
     "test": "babel-node node_modules/mocha/bin/_mocha -- test/**/*.js",

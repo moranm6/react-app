@@ -26,8 +26,9 @@ export default (state = initialState, action) => {
 };
 
 function updateHero(state, hero) {
+  console.log('Posting: '+ hero);
   var request = new XMLHttpRequest();
-  request.open('POST', 'www.notarealurl.com', true);
+  request.open('POST', 'https://ce3rt0e0yl.execute-api.us-east-1.amazonaws.com/prod/abbHeros', true);
   request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
   request.send(JSON.stringify(hero));
 }

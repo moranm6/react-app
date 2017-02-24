@@ -20,7 +20,7 @@ export default class HeroEditor extends React.Component {
 
   handleChange(event) {
     console.log("In handleChange");
-    console.log("this.refs: " + this.refs);
+    console.log("this.refs.durability: " + this.refs.durability.value);
     const newState = {
       uuid: this.refs.uuid.value,
       realName: this.refs.realName.value,
@@ -28,6 +28,12 @@ export default class HeroEditor extends React.Component {
       powers: this.refs.powers.value,
       s3ImageUrl: this.refs.s3ImageUrl.value,
       signedAccords: this.refs.signedAccords.value,
+      fightingSkills: this.refs.fightingSkills.value,
+      strength: this.refs.strength.value,
+      durability: this.refs.durability.value,
+      energyProjection: this.refs.energyProjection.value,
+      speed: this.refs.speed.value,
+      intelligence: this.refs.intelligence.value,
       abilities: {
         fightingSkills: this.refs.fightingSkills.value,
         strength: this.refs.strength.value,
@@ -42,6 +48,7 @@ export default class HeroEditor extends React.Component {
   }
 
   handleSubmit(event) {
+    console.log("In handle submit. State: " + this.state);
     let hero = this.state
     event.preventDefault();
     this.props.updateHero(this.state);
@@ -89,6 +96,54 @@ export default class HeroEditor extends React.Component {
                 </select>
               </div>
             </div>
+            <div className="form-group row">
+              <div className="col-lg-12">
+                <div className="form-group">
+                  <label htmlFor="powers">Description of Powers</label>
+                  <textarea className="form-control" onChange={this.handleChange} ref="powers" id="powers" value={this.state.powers} />
+                </div>
+              </div>
+            </div>
+            <div className="form-group row">
+              <div className="col col-lg-4">
+                <div className="form-group">
+                  <label htmlFor="durability">Durability</label>
+                  <input type="number" className="form-control" onChange={this.handleChange} ref="durability" id="durability" value={this.state.durability} />
+                </div>
+              </div>
+              <div className="col col-lg-4">
+                <div className="form-group">
+                  <label htmlFor="energyProjection">Energy Projection</label>
+                  <input type="number" className="form-control" onChange={this.handleChange} ref="energyProjection" id="energyProjection" value={this.state.energyProjection} />
+                </div>
+              </div>
+              <div className="col col-lg-4">
+                <div className="form-group">
+                  <label htmlFor="fightingSkills">Fighting Skills</label>
+                  <input type="number" className="form-control" onChange={this.handleChange} ref="fightingSkills" id="fightingSkills" value={this.state.fightingSkills} />
+                </div>
+              </div>
+            </div>            
+          <div className="form-group row">
+            <div className="col col-lg-4">
+              <div className="form-group">
+                <label htmlFor="intelligence">Intelligence</label>
+                <input type="number" className="form-control" onChange={this.handleChange} ref="intelligence" id="intelligence" value={this.state.intelligence} />
+              </div>
+            </div>
+            <div className="col col-lg-4">
+              <div className="form-group">
+                <label htmlFor="speed">Speed</label>
+                <input type="number" className="form-control" onChange={this.handleChange} ref="speed" id="speed" value={this.state.speed} />
+              </div>
+            </div>
+            <div className="col col-lg-4">
+              <div className="form-group">
+                <label htmlFor="strength">Strength</label>
+                <input type="number" className="form-control" onChange={this.handleChange} ref="strength" id="strength" value={this.state.strength} />
+              </div>
+            </div>
+          </div>
 
         </form>
     </div>

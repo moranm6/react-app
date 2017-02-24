@@ -32,6 +32,7 @@ const main = (
           <Route path="about" component={Hello}/>
           <Route path="heroes" component={Hero}/>
           <Route path="newHero" component={HeroEditor} />
+          <Route path="hero/(:id)" component={HeroEditor} />
         </Route>
       </Router>
     </Provider>

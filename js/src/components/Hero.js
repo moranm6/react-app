@@ -16,11 +16,12 @@ export default class Hero extends React.Component {
             <tr>
               <th>
                 <span className="col-md-2">Hero Name</span>
-                <Link to="/newHero" className="btn btn-xs btn-success col-md-1">
+                {/*<Link to="/newHero" className="btn btn-xs btn-success col-md-1">
                   <span className="glyphicon glyphicon-plus" aria-hidden="true"></span>
                   &nbsp;Add
-                </Link>
+                </Link>*/}
               </th>
+              {/*<th><span className="col-md-3">ID</span></th>*/}
               <th><span className="col-md-3">Image</span></th>
               <th><span className="col-md-3">Real Name</span></th>
               <th><span className="col-md-1">Sell-Out</span></th>
@@ -36,8 +37,9 @@ export default class Hero extends React.Component {
 
 const HeroCell = ({uuid, s3ImageUrl, heroName, realName, signedAccords}) => (
   <tr>
-    <td><img src={s3ImageUrl} width='80px'/></td>
+    {/*<td>{uuid}</td>*/}
     <td><Link to={`/hero/${uuid}`}>{heroName}</Link></td>
+    <td><img src={s3ImageUrl} width='80px'/></td>
     <td>{realName}</td>
     <td>{signedAccords}</td>
   </tr>);
